@@ -13,10 +13,13 @@ console.log(words);
 var express = require('express');
 
 var app = express();
-
 port = process.env.PORT || 80
-app.listen(port,
-  () => console.log(`listening at http://localhost:${port}`))
+var server = app.listen(port, listening);
+
+function listening() {
+  console.log(`listening at http://localhost:${port});
+}
+
 app.use(express.static('website'));
 
 app.get('/add/:word/:score?', addWord);
