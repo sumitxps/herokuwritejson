@@ -14,12 +14,9 @@ var express = require('express');
 
 var app = express();
 
-var server = app.listen(3000, listening);
-
-function listening() {
-  console.log('listening. . . ');
-}
-
+port = process.env.PORT || 80
+app.listen(port,
+  () => console.log(`listening at http://localhost:${port}`))
 app.use(express.static('website'));
 
 app.get('/add/:word/:score?', addWord);
