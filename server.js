@@ -17,7 +17,7 @@ port = process.env.PORT || 80
 var server = app.listen(port, listening);
 
 function listening() {
-  console.log(`listening at http://localhost:${port});
+  console.log(`listening at http://localhost:${port}`);
 }
 
 app.use(express.static('website'));
